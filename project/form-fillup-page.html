@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banaras-Buxar cruise services</title>
+   <style>
+    /* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+a:hover {
+  color: #23527c;
+}
+
+/* Header Styles */
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+nav {
+  background-color: #444;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+}
+
+/* Main Content Styles */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+section {
+  background-color: #fff;
+  padding: 2em;
+  margin-bottom: 2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* Form Styles */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="date"], select {
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 1em;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* Footer Styles */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  margin-bottom: 0.5em;
+}
+   </style>
+</head>
+<body>
+    <header>
+        <h1>Banaras-Buxar cruise services</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="booking">
+            <h2>Cruise Booking</h2>
+            <p>Booked Available Seat Availability</p>
+            <form>
+                <label for="booking-date">Booking Date</label>
+                <input type="date" id="booking-date" name="booking-date">
+                <label for="slot">Available Slot</label>
+                <select id="slot" name="slot">
+                    <option value="6:15 PM">6:15 PM</option>
+                    <option value="7:45 PM">7:45 PM</option>
+                </select>
+                <label for="seat-no">Seat No.</label>
+                <input type="number" id="seat-no" name="seat-no" min="1">
+                <p id="fare-details">Fare Details: Amount INR 0.00</p>
+                <button type="submit">Proceed to book</button>
+            </form>
+            <p>Ticket Price: Upper Deck (Non-AC): Rs. 700/- per person (inclusive of all taxes)</p>
+            <p>Lower Deck (AC): Rs. 900/- per person (inclusive of all taxes)</p>
+            <!-- ... rest of your content ... -->
+        </section>
+    </main>
+    <footer>
+        <p>Enquiry (Call): +91 9873214524</p>
+        <p>Tech Support (WhatsApp): +91 9873214524</p>
+        <p>10 AM to 6 PM (Mon-Sat)</p>
+        <p>© 2024 Banaras-Buxar cruise services All rights reserved.</p>
+    </footer>
+
+    <script>
+        const seatNoInput = document.getElementById('seat-no');
+        const fareDetailsElement = document.getElementById('fare-details');
+
+        seatNoInput.addEventListener('input', calculateFare);
+
+        function calculateFare() {
+            const seatCount = parseInt(seatNoInput.value);
+            const farePerSeat = 700; // Rs. 700 per seat
+            const totalFare = seatCount * farePerSeat;
+
+            fareDetailsElement.textContent = `Fare Details: Amount INR ${totalFare}.00`;
+        }
+    </script>
+</body>
+</html>
